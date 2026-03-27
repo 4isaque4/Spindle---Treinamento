@@ -1,0 +1,22 @@
+{
+  "watch": [
+    "server.js",
+    "controllers",
+    "routes",
+    "middleware",
+    "utils"
+  ],
+  "ext": "js json",
+  "ignore": [
+    "data/corrections.json"
+  ]
+}
+
+
+
+
+
+
+
+
+

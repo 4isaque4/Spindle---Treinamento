@@ -1,0 +1,247 @@
+/* Modal de Feedback - Paleta clean alinhada com o chatbot */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.feedback-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e5e5;
+}
+
+.feedback-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px 24px;
+  border-bottom: 2px solid #E8F4FD;
+}
+
+.feedback-modal-header h2 {
+  color: #1a1a1a;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.feedback-form {
+  padding: 24px;
+}
+
+.feedback-form .form-group {
+  margin-bottom: 20px;
+}
+
+.feedback-form .form-group label {
+  display: block;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.feedback-form .form-group label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.feedback-form .form-group textarea,
+.feedback-form .form-group input:not([type="checkbox"]),
+.feedback-form .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.feedback-form .form-group textarea:focus,
+.feedback-form .form-group input:not([type="checkbox"]):focus,
+.feedback-form .form-group select:focus {
+  outline: none;
+  border-color: #4A90E2;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.feedback-form .form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.feedback-form .form-group label input[type="checkbox"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: #4A90E2;
+}
+
+.feedback-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.category-section,
+.message-section {
+  margin-bottom: 24px;
+}
+
+.category-section label,
+.message-section label {
+  display: block;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.category-section select,
+.message-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.category-section select:focus,
+.message-section textarea:focus {
+  outline: none;
+  border-color: #4A90E2;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.category-section select option {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.message-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.message-section textarea::placeholder {
+  color: #999;
+}
+
+.feedback-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+.submit-button {
+  background: #4A90E2;
+  color: #ffffff;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #6BB6FF;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .feedback-modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .feedback-modal-header,
+  .feedback-form {
+    padding: 20px;
+  }
+  
+  .feedback-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}
